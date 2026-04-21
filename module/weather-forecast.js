@@ -52,7 +52,7 @@ export async function weatherForecast() {
 
 function formatForecast(data) {
   return data.list
-    .filter(item => item.dt_txt.includes("12:00:00")) // ambil jam 12 siang
+    .filter(item => item.dt_txt.includes("12:00:00"))
     .map(item => {
       const date = new Date(item.dt_txt);
 
@@ -63,7 +63,7 @@ function formatForecast(data) {
         year: "numeric"
       });
 
-      const tempC = (item.main.temp - 273.15).toFixed(2); // Kelvin → Celsius
+      const tempC = (item.main.temp - 273.15).toFixed(2);
 
       return {
         day: day,
